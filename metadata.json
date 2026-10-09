@@ -1,0 +1,6 @@
+{
+  "name": "INTEGRIX — The Intercollegiate Integrated Medical Quiz Series",
+  "description": "Official cinematic website for INTEGRIX, the intercollegiate integrated medical quiz series organized by ICARUS Medical College Academic Club, Government Nagapattinam Medical College.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

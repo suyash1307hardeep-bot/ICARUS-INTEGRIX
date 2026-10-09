@@ -1,0 +1,121 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .font-cinzel {
+    font-family: 'Cinzel', serif;
+  }
+  .font-cormorant {
+    font-family: 'Cormorant Garamond', serif;
+  }
+  .font-sans {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+  
+  /* Antique & Metallic Gold Gradients */
+  .text-gold-metallic {
+    background: linear-gradient(135deg, #F4D58D 0%, #C6A052 35%, #FFF2CC 55%, #80612F 85%, #C6A052 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .text-gold-antique {
+    background: linear-gradient(180deg, #F4D58D 0%, #C6A052 60%, #80612F 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .border-gold-subtle {
+    border-color: rgba(198, 160, 82, 0.25);
+  }
+
+  .border-gold-glow {
+    border-color: rgba(244, 213, 141, 0.45);
+    box-shadow: 0 0 25px rgba(198, 160, 82, 0.15);
+  }
+
+  .gold-glow-subtle {
+    filter: drop-shadow(0 0 24px rgba(198, 160, 82, 0.35));
+  }
+
+  .gold-glow-strong {
+    filter: drop-shadow(0 0 35px rgba(244, 213, 141, 0.5)) drop-shadow(0 0 70px rgba(198, 160, 82, 0.25));
+  }
+}
+
+/* Atmospheric Custom Animations */
+@keyframes subtlePulse {
+  0%, 100% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.95;
+    transform: scale(1.015);
+  }
+}
+
+@keyframes lightSweep {
+  0% {
+    transform: translateX(-150%) skewX(-25deg);
+  }
+  100% {
+    transform: translateX(250%) skewX(-25deg);
+  }
+}
+
+@keyframes gentleFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-subtle-pulse {
+  animation: subtlePulse 7s ease-in-out infinite;
+}
+
+.animate-gentle-float {
+  animation: gentleFloat 6s ease-in-out infinite;
+}
+
+/* Light sweep effect on emblem */
+.sweep-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.sweep-container::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    60deg,
+    transparent 35%,
+    rgba(244, 213, 141, 0.15) 50%,
+    transparent 65%
+  );
+  animation: lightSweep 8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  pointer-events: none;
+}
+
+/* Smooth dark scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+::-webkit-scrollbar-thumb {
+  background: #1f1d19;
+  border-radius: 4px;
+  border: 1px solid rgba(198, 160, 82, 0.2);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #332d20;
+}
+
